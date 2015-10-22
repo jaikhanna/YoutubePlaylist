@@ -8,7 +8,7 @@
 	<li>Extract the zip folder.</li>
 	<li>Open terminal and change directory ('cd') into the downloaded folder.</li>
 	<li>Run command 'node app.js' and wait until you see the message 'listening on *:3000. Good to go and check out the app now!'.</li>
-	<li>Open your browser (chrome prefered) and type 'http://localhost:3000/' into the address bar.</li>
+	<li>Open your browser (chrome prefered) and go <a href="http://localhost:3000/" target="#">here</a> or type 'http://localhost:3000/' into the address bar.</li>
 	<li>You should see videos from my favorite band - Boyce Avenue! Go ahead and select any artist from the dropdown.</li>
 </ul>
 
