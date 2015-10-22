@@ -40,5 +40,5 @@ app.post('/newVideo', function(req, res){
 });
 
 http.listen(3000, function(){
-  console.log('listening on *:3000. Good to go and check out the app now!');
+  console.log('listening on *:3000. Good to go. Check out the app now!');
 });
