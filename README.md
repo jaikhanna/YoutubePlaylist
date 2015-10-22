@@ -16,7 +16,7 @@
 <ul>
 	<li>The application is based on NodeJS.</li>
 	<li>The client or the browser calls a function on page load to load top five videos for the default artist.</li>
-	<li>When the user makes any changes to the selection in the dropdown menu, the application call the same function to load top five videos for the newly selected artist.</li>
+	<li>When the user makes any changes to the selection in the dropdown menu, the application calls the same function to load top five videos for the newly selected artist.</li>
 	<li>This function makes a post request to the server and passes an encoded version of the artist name selected. The name is encoded so that it is directly usable in the search query.</li>
 	<li>The server then calls the YouTube API and the response is sent back to the browser.</li>
 	<li>The browser loops through the response to extract the videos and displays them with their respective titles.</li>

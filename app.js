@@ -18,12 +18,23 @@ app.get('/', function(req, res){
 app.post('/newVideo', function(req, res){
 
 	var apiKey = 'AIzaSyDe0Detz_TAC_QEtnON5JrhIwsA1jCNpnE';
-	request('https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q='+req.body.artistName+'&key='+apiKey, function (error, response, body) {
+
+	request({
+		uri: 'https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q='+req.body.artistName+'&key='+apiKey,
+	}, function (error, response, body) {
 	  		if (!error && response.statusCode == 200) {
 	    		res.send(body); // Print the google web page.
 	    		
 	  		}
-	});
+	}
+	);
+
+	// request('https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q='+req.body.artistName+'&key='+apiKey, function (error, response, body) {
+	//   		if (!error && response.statusCode == 200) {
+	//     		res.send(body); // Print the google web page.
+	    		
+	//   		}
+	// });
 
 
 });
