@@ -2,16 +2,6 @@
 <head>
 	<title></title>
 </head>
-<style type="text/css">
-
-		body{
-			background-color: #7B0099;
-		}
-
-		ul li, h1, h2{
-			color: white;
-		}
-	</style>
 <body>
 
 <h1>Welcome to the YoutubePlaylist application!</h1>
@@ -19,7 +9,7 @@
 <h2>Instructions to run the application:</h2>
 
 <ul>
-	<li>Download the repo as zip.</li>
+	<li style="color:blue;">Download the repo as zip.</li>
 	<li>Extract the zip folder.</li>
 	<li>Open terminal and change directory ('cd') into the downloaded folder.</li>
 	<li>Run command 'node app.js' and wait until you see the message 'listening on *:3000. Good to go and check out the app now!'.</li>
