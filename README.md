@@ -1,8 +1,10 @@
-Welcome to the YoutubePlaylist application!
+<h1>Welcome to the YoutubePlaylist application!</h1>
 
 
-Instructions to run the application:
-
+<h2>Instructions to run the application:</h2>
+<ul>
+	<li>Download the repo as zip.</li>
+</ul>
 1. Download the repo as zip.
 2. Extract the zip folder.
 3. Open terminal and change directory ('cd') into the downloaded folder.
