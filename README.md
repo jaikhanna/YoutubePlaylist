@@ -1,8 +1,17 @@
-<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
+<style type="text/css">
+
+		body{
+			background-color: #7B0099;
+		}
+
+		ul li, h1, h2{
+			color: white;
+		}
+	</style>
 <body>
 
 <h1>Welcome to the YoutubePlaylist application!</h1>
