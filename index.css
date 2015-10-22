@@ -1,7 +1,3 @@
-body{
-	background-color: green;
-}
-
-.item{
-	background-color: blue;
+#searchResults{
+	color: blue;
 }

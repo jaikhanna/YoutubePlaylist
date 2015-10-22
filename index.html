@@ -2,38 +2,81 @@
 <html>
 <head>
 	<title>Youtube Search</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+
+		body{
+			background-color: #7B0099;
+		}
+
+		#searchResults{
+			color: white;
+		}
+
+		#searchItems{
+			margin-top: 20px;
+			width: 150px;
+
+		}
+
+		#searchItems{
+			-webkit-appearance: menulist-button;
+			font-size: 15px;
+			background-color: white;
+			border: 2px solid white;
+			background-color: #7B0099;
+			color: white;
+
+		}
+
+		.data{
+			width: 100%;
+			margin-top: 10px;
+		}
+
+		#loadingMsg{
+			margin-top: 30px;
+			font-size: 30px;
+		}
+	</style>
 </head>
 <body>
 	<div class="row">
-		<div class="col-md-3"></div>
+		<div class="col-md-5"></div>
 		
-		<div class="col-md-6">
+		<div class="col-md-2">
 			<form id="searchPlaylist">
 				<select id="searchItems">
 					<option>Boyce Avenue</option>
 					<option>Adam Levine</option>
+					<option>Sam Smith</option>
+					<option>Sam Tsui</option>
+					<option>Kurt Hugo Schneider</option>
+					<option>Jason Derulo</option>
 				</select>
 			</form>
 		</div>
 		
-		<div class="col-md-3"></div>
+		<div class="col-md-5"></div>
 	</div>
 
 	<div class="row">
-		<div class="col-md-3"></div>
+		<div class="col-md-2"></div>
 		
-		<div class="col-md-6">
-			<div id="searchResults">Hey there!</div>
+		<div class="col-md-8">
+			<div id="searchResults"><p id="loadingMsg">brewing up videos...</p></div>
 		</div>
 		
-		<div class="col-md-3"></div>
+		<div class="col-md-2"></div>
 	</div>
-
-
-	
-
-	
-	<style type="text/css" src="index.css"></style>
         	<script src="app.js"></script>
        	
 </body>
@@ -41,57 +84,35 @@
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script type="text/javascript" >
 	
 	$(document).ready(function(){
 
-	var artistNameEncoded = encodeURIComponent($( "#searchItems option:selected" ).text()).replace(/%20/g, "+");
-
-
-	$.post("http://localhost:3000/newVideo",{artistName:  artistNameEncoded}, function(data, status){
-	        
-		console.log(JSON.parse(data).items);
-		$("#searchResults").html("");
-		$.each(JSON.parse(data).items, function(index, item) {
-	            		
-			$("#searchResults").append('<div class="data"><h2>'+item.snippet.title+'</h2><iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/'+item.id.videoId+'" frameborder="0" allowfullscreen></iframe></div>');
-			console.log(data);
-	          	});
-
-
-
-	});
-
-	$('#searchPlaylist').change(function() {
-
-	       var artistNameEncoded = encodeURIComponent($( "#searchItems option:selected" ).text()).replace(/%20/g, "+");
-	        $.post("http://localhost:3000/newVideo",{artistName:  artistNameEncoded}, function(data, status){
-	        
-			console.log(JSON.parse(data).items);
-			$("#searchResults").html("");
-			$.each(JSON.parse(data).items, function(index, item) {
-		            		
-				$("#searchResults").append('<div class="data"><h2>'+item.snippet.title+'</h2><iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/'+item.id.videoId+'" frameborder="0" allowfullscreen></iframe></div>');
-				console.log(data);
-		          	});
+		function loadVideos(){
+			var artistNameEncoded = encodeURIComponent($( "#searchItems option:selected" ).text()).replace(/%20/g, "+");
+		        	$.post("http://localhost:3000/newVideo",{artistName:  artistNameEncoded}, function(data, status){
+		        
+				console.log(JSON.parse(data).items);
+				$("#searchResults").html("");
+				$.each(JSON.parse(data).items, function(index, item) {
+			            		
+					$("#searchResults").append('<div class="data"><h2>'+item.snippet.title+'</h2><iframe class="video w100" width="950" height="480" src="//www.youtube.com/embed/'+item.id.videoId+'" frameborder="0" allowfullscreen></iframe><hr></div>');
+					console.log(data);
+			          	});
 
 
 
+			});
+		}
+
+		loadVideos();
+
+		$('#searchPlaylist').change(function() {
+
+		       loadVideos();
 		});
+
 	});
-
-});
-
-
 </script>
-<!-- <script src="https://apis.google.com/js/client.js?onload=init"></script> -->
 </html>
