@@ -1,15 +1,9 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
 <h1>Welcome to the YoutubePlaylist application!</h1>
 
 <h2>Instructions to run the application:</h2>
 
 <ul>
-	<li style="color:blue;">Download the repo as zip.</li>
+	<li>Download the repo as zip.</li>
 	<li>Extract the zip folder.</li>
 	<li>Open terminal and change directory ('cd') into the downloaded folder.</li>
 	<li>Run command 'node app.js' and wait until you see the message 'listening on *:3000. Good to go and check out the app now!'.</li>
@@ -27,6 +21,3 @@
 	<li>The server then calls the YouTube API and the response is sent back to the browser.</li>
 	<li>The browser loops through the response to extract the videos and displays them with their respective titles.</li>
 </ul>
-
-</body>
-</html>
