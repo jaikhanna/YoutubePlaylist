@@ -1,4 +1,4 @@
-<h1>Welcome to the YoutubePlaylist application!</h1>
+<h1>The YouTubePlaylist application!</h1>
 
 <h2>Instructions to run the application:</h2>
 
