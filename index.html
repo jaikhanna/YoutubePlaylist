@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Youtube Search</title>
+	<title>Youtube Playlist</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -11,6 +11,7 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 	<style type="text/css">
 
 		body{
@@ -81,12 +82,8 @@
        	
 </body>
 
-<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" >
-	
 	$(document).ready(function(){
 
 		function loadVideos(){
@@ -99,9 +96,6 @@
 					$("#searchResults").append('<div class="data"><h2>'+item.snippet.title+'</h2><iframe class="video w100" width="950" height="480" src="//www.youtube.com/embed/'+item.id.videoId+'" frameborder="0" allowfullscreen></iframe><hr></div>');
 					console.log(data);
 			          	});
-
-
-
 			});
 		}
 
