@@ -3,7 +3,7 @@
 <h2>Instructions to run the application:</h2>
 
 <ul>
-	<li>This is assuming that nodeJS is already installed on your machine. Click <a href="https://nodejs.org/en/">here</a> to see how to install node.</li>
+	<li>This is assuming that nodeJS is already installed on your machine. Click <a href="https://nodejs.org/en/" target="#">here</a> to see how to install nodeJS.</li>
 	<li>Download the repo as zip.</li>
 	<li>Extract the zip folder.</li>
 	<li>Open terminal and change directory ('cd') into the downloaded folder.</li>
