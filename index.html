@@ -82,8 +82,8 @@
 </body>
 
 <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 
 <script type="text/javascript" >
 	
@@ -92,8 +92,7 @@
 		function loadVideos(){
 			var artistNameEncoded = encodeURIComponent($( "#searchItems option:selected" ).text()).replace(/%20/g, "+");
 		        	$.post("http://localhost:3000/newVideo",{artistName:  artistNameEncoded}, function(data, status){
-		        
-				console.log(JSON.parse(data).items);
+		       
 				$("#searchResults").html("");
 				$.each(JSON.parse(data).items, function(index, item) {
 			            		
